@@ -194,6 +194,16 @@ Because this project requires zero compilation or build steps, deployment takes 
 
 ---
 
+## Need Help with Customization?
+
+If you want to make changes, add new features, or tweak layouts beyond your technical comfort zone:
+
+* **Contact Me:** Feel free to check [notkoneko.space](https://notkoneko.space) for my links (Discord is preferred!).
+* **Free AI / Coding Tools:** If it aligns with your workflow and morals, free tools like **Google Gemini** or **Antigravity IDE** can help you edit the code, generate new sections, or troubleshoot CSS.
+* **Prefer Human Support?** If you avoid AI tools, send me a message directly via Discord and I'll be glad to help out.
+
+---
+
 ## License & Credits
 
 - **License:** MIT License — free for personal and commercial use (attribution requested).
