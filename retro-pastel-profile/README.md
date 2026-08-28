@@ -1,5 +1,7 @@
 # Retro Pastel Profile Template
 
+![Retro Pastel Profile Template Preview](assets/preview.png)
+
 A cozy, retro faux-browser profile template for creators, streamers, and artists.
 
 You can use this for your main link page, stream info board, commission sheet, or personal homepage. Everything is styled with soft pastel pinks, a clean gingham pattern, and retro browser UI accents.
