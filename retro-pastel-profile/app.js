@@ -1,6 +1,12 @@
 let SECTIONS = ["home", "menu"];
 const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
 const setHtml = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val; };
+const setMeta = (attr, key, val) => {
+  if (!val) return;
+  let el = document.querySelector(`meta[${attr}="${key}"]`);
+  if (!el) { el = document.createElement("meta"); el.setAttribute(attr, key); document.head.appendChild(el); }
+  el.setAttribute("content", val);
+};
 function switchSection(id) {
   const target = SECTIONS.includes(id) ? id : SECTIONS[0];
   document.querySelectorAll(".site-section").forEach(s => s.classList.toggle("active", s.id === `${target}-section`));
@@ -13,7 +19,33 @@ function _nextSection() { const i = SECTIONS.indexOf(location.hash.replace("#", 
 document.addEventListener("DOMContentLoaded", () => {
   const cfg = window.SITE_CONFIG; if (!cfg) return;
   SECTIONS = cfg.header.navLinks.map(n => n.id);
-  document.title = cfg.meta.title; setTxt("domain-pill-text", cfg.meta.domainPill);
+
+  // Metadata & Social Embed Cards
+  if (cfg.meta) {
+    if (cfg.meta.title) {
+      document.title = cfg.meta.title;
+      setMeta("name", "title", cfg.meta.title);
+      setMeta("property", "og:title", cfg.meta.title);
+      setMeta("name", "twitter:title", cfg.meta.title);
+    }
+    if (cfg.meta.description) {
+      setMeta("name", "description", cfg.meta.description);
+      setMeta("property", "og:description", cfg.meta.description);
+      setMeta("name", "twitter:description", cfg.meta.description);
+    }
+    if (cfg.meta.socialImage) {
+      setMeta("property", "og:image", cfg.meta.socialImage);
+      setMeta("name", "twitter:image", cfg.meta.socialImage);
+    }
+    if (cfg.meta.themeColor) {
+      setMeta("name", "theme-color", cfg.meta.themeColor);
+    }
+    if (cfg.meta.domainUrl) {
+      setMeta("property", "og:url", cfg.meta.domainUrl);
+      setMeta("name", "twitter:url", cfg.meta.domainUrl);
+    }
+    setTxt("domain-pill-text", cfg.meta.domainPill || "yourdomain.com");
+  }
   const b = document.getElementById("banner-img");
   if (b && cfg.header.bannerImage) {
     b.src = cfg.header.bannerImage.url; b.alt = cfg.header.bannerImage.alt || "Banner";

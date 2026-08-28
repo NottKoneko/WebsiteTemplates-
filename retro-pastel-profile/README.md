@@ -28,15 +28,22 @@ All the text, links, headings, and images are configured inside [`config.js`](co
 
 Open `config.js` in a text editor to update any section:
 
-### 1. Site Title & Address Bar
-Change your page title and the address shown in the top bar:
+### 1. Site Title, Social Embed Card & Address Bar
+Change your page title, social preview description, card image, accent color, and top address bar:
 ```javascript
 meta: {
   title: "Your Name - Official Links",
+  description: "A cozy retro profile and links directory.",
+  socialImage: "assets/preview.png", // Image shown on Discord/Twitter/X embeds
+  themeColor: "#FFB3D8",             // Mobile browser toolbar & embed accent color
   domainPill: "yourname.com",
   domainUrl: "https://yourname.com",
 }
 ```
+
+> [!TIP]
+> **Social Preview Embeds (Discord, Twitter/X, iMessage):**
+> Setting `description` and `socialImage` in `config.js` updates your metadata dynamically. Because some external platform scrapers (like Discord and Twitter) inspect static HTML before JavaScript runs, you can also update the `<meta>` tags in `<head>` inside [`index.html`](index.html) so link previews appear immediately when shared.
 
 ### 2. Header & Banner Image
 Swap out the banner image with your own file in `assets/` or an image link:

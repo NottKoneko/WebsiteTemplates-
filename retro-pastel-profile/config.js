@@ -5,9 +5,12 @@
  */
 
 window.SITE_CONFIG = {
-  // Website Metadata & Faux Address Bar
+  // Website Metadata, Social Card / Discord Embed & Faux Address Bar
   meta: {
     title: "Retro Pastel Profile Template",
+    description: "A cozy, retro faux-browser profile and link directory template for creators, streamers, and artists.",
+    socialImage: "assets/preview.png", // Image shown when link is shared on Discord/Twitter (also in index.html for static scrapers)
+    themeColor: "#FFB3D8",             // Browser toolbar and embed accent color
     domainPill: "yourdomain.com",
     domainUrl: "https://yourdomain.com",
   },
