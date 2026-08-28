@@ -1,0 +1,4 @@
+# Cloudflare Pages Redirects / Rewrites
+/previewsite/retro-pastel-profile/*  /retro-pastel-profile/:splat  200
+/previewsite/retro-pastel-profile/   /retro-pastel-profile/index.html  200
+/previewsite/retro-pastel-profile    /retro-pastel-profile/index.html  200

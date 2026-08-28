@@ -12,9 +12,9 @@ If you run into issues, need help setting something up, or have ideas for new te
 
 ## Templates
 
-| Template | What it is | Link |
+| Template | What it is | Links |
 | :--- | :--- | :--- |
-| **Retro Pastel Profile** | A cozy retro desktop/browser style profile page with multiple pages, sidebars, and customizable cards. | [Setup Guide](./retro-pastel-profile/README.md) |
+| **Retro Pastel Profile** | A cozy retro desktop/browser style profile page with multiple pages, sidebars, and customizable cards. | [Live Preview](https://templates.notkoneko.space/previewsite/retro-pastel-profile) • [Setup Guide](./retro-pastel-profile/README.md) |
 
 More templates will be added as they are built.
 
