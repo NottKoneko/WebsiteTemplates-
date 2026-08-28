@@ -1,0 +1,10 @@
+# Archives & working backups
+**/archive/
+**/index-og.md
+archive/
+index-og.md
+
+# System files
+.DS_Store
+Thumbs.db
+*.log

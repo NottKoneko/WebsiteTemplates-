@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Pastel Profile Template</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="site-wrapper">
+    <div class="site-main" role="main">
+      <div class="inner">
+
+        <!-- Header Component -->
+        <header id="header">
+          <!-- Row 1: Top Faux-Browser Toolbar Icons -->
+          <div class="toolbar-container">
+            <ul class="icons-bar">
+              <li>
+                <button type="button" class="icon-btn prev-btn" onclick="_previousSection();" aria-label="Previous Section" title="Previous Section">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="icon-btn next-btn" onclick="_nextSection();" aria-label="Next Section" title="Next Section">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </li>
+              <li>
+                <button type="button" class="icon-btn" onclick="location.reload();" aria-label="Refresh" title="Refresh">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                </button>
+              </li>
+              <li>
+                <span class="icon-deco heart-deco" title="Heart">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </span>
+              </li>
+              <li>
+                <span class="icon-deco wifi-deco" title="Wifi">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Row 2: Section Nav Bar & Wide Domain Pill -->
+          <div class="nav-bar-container">
+            <nav class="nav-links-bar" aria-label="Section Navigation">
+              <ul id="header-nav-links" class="header-nav-list"></ul>
+            </nav>
+            <div class="domain-pill-box">
+              <button type="button" id="domain-copy-btn" class="domain-pill-btn" title="Copy website URL">
+                <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span id="domain-pill-text">yourname.carrd.co</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Image Banner -->
+          <div class="banner-container">
+            <img id="banner-img" class="hero-banner-image" src="" alt="Banner">
+          </div>
+        </header>
+
+        <!-- SECTION 1: HOME (3 Columns Desktop) -->
+        <section id="home-section" class="site-section active">
+          <div class="columns-grid home-grid">
+            
+            <!-- Left Column: Avatar, Stats, Favorites, Schedule -->
+            <aside class="col col-home-left">
+              <div class="avatar-box">
+                <img id="home-avatar" class="avatar-image" src="" alt="Avatar">
+              </div>
+              <h2 id="home-name" class="profile-name"></h2>
+              <div id="home-tagline" class="tagline-box"></div>
+              
+              <hr class="carrd-divider">
+              
+              <div class="stats-box">
+                <h3 id="home-stats-btn" class="underlined-title">stats</h3>
+                <ul id="home-stats-list" class="stats-list"></ul>
+              </div>
+
+              <hr class="carrd-divider">
+
+              <div id="home-favorites" class="favorites-box"></div>
+
+              <hr class="carrd-divider">
+
+              <div class="schedule-box">
+                <h3 id="home-variety-title" class="underlined-title"></h3>
+                <p id="home-variety-text" class="schedule-text"></p>
+              </div>
+            </aside>
+
+            <!-- Center Column: Welcome, Bio, Links Groups -->
+            <main class="col col-home-center">
+              <h1 id="home-heading" class="main-heading"></h1>
+              <p id="home-subheading" class="sub-heading"></p>
+              <div id="home-paragraphs" class="bio-paragraphs"></div>
+              
+              <div id="home-link-groups" class="link-groups-container"></div>
+            </main>
+
+            <!-- Right Column: Nav, Todos, Status, Calendar, Schedule -->
+            <aside class="col col-home-right">
+              <h3 class="underlined-title">navigation</h3>
+              <ul class="sidebar-nav-list section-nav-target"></ul>
+
+              <hr class="carrd-divider">
+
+              <div class="todos-box">
+                <table class="carrd-table">
+                  <thead><tr><th id="home-todos-title">To dos:</th></tr></thead>
+                  <tbody id="home-todos-body"></tbody>
+                </table>
+              </div>
+
+              <hr class="carrd-divider">
+
+              <div class="status-widget">
+                <h3 id="home-status-title" class="underlined-title"></h3>
+                <p id="home-status-text" class="status-msg"></p>
+              </div>
+
+              <hr class="carrd-divider">
+
+              <div class="calendar-box">
+                <h3 id="home-calendar-title" class="underlined-title"></h3>
+                <table class="carrd-table">
+                  <thead><tr><th id="home-calendar-date"></th></tr></thead>
+                  <tbody><tr><td id="home-calendar-event"></td></tr></tbody>
+                </table>
+              </div>
+
+              <hr class="carrd-divider">
+
+              <div class="schedule-box">
+                <h3 id="home-side-sched-title" class="underlined-title"></h3>
+                <div id="home-side-sched-items" class="schedule-text"></div>
+              </div>
+            </aside>
+
+          </div>
+        </section>
+
+        <!-- SECTION 2: SUBPAGE / MENU (2 Columns Desktop) -->
+        <section id="menu-section" class="site-section inactive">
+          <div class="columns-grid sub-grid">
+            
+            <!-- Left Column: Nav, Commissions, Disclaimer -->
+            <aside class="col col-sub-left">
+              <div class="sidebar-nav-box">
+                <h3 class="underlined-title">navigation</h3>
+                <ul class="sidebar-nav-list section-nav-target"></ul>
+              </div>
+
+              <div class="commissions-section">
+                <h3 class="comm-title"><span id="menu-comm-heading"></span><br><span id="menu-comm-status" class="comm-status-text"></span></h3>
+                <p id="menu-comm-desc" class="comm-desc"></p>
+                <div class="comm-btn-wrap">
+                  <a id="menu-comm-btn" href="" target="_blank" rel="noopener noreferrer" class="comm-plain-link"></a>
+                </div>
+              </div>
+
+              <div class="disclaimer-widget">
+                <h3 id="menu-disclaimer-title" class="underlined-title"></h3>
+                <p id="menu-disclaimer-text" class="disclaimer-text"></p>
+              </div>
+            </aside>
+
+            <!-- Right Column: Catalog / Menu -->
+            <main class="col col-sub-right">
+              <h1 id="menu-title" class="underlined-title big-title"></h1>
+              <p id="menu-desc" class="menu-desc"></p>
+              <div id="menu-categories" class="asmr-categories-list"></div>
+            </main>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Floating Footer Outside Card -->
+    <footer id="footer" class="site-footer">
+      <p id="footer-text" class="footer-copy"></p>
+    </footer>
+  </div>
+
+  <!-- Toast Notification Popup -->
+  <div id="toast" class="toast-popup" role="status" aria-live="polite">
+    <span class="toast-heart">♥</span> Copied link to clipboard!
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
