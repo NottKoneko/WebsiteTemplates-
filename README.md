@@ -1,61 +1,46 @@
 # Website Templates
 
-A curated collection of free, open-source, zero-dependency website and profile templates.
+Free, open-source website and profile templates for creators, artists, streamers, and developers.
 
-These templates are 100% free for anyone to use, take, adapt, modify, and build upon for personal or commercial projects. Whether you are building a creator page, portfolio, links directory, or interactive site, feel free to take whatever code, layout, or components you need.
+Feel free to use these templates for your personal links, portfolio, or projects. You can copy the code, tweak the layout, change the colors, or use parts of it however you like.
 
-All that is asked in return is that credit is given if you use any of these templates (such as keeping the subtle on-page footer credit or linking back to this repository / creator).
+If you use any of these templates, all I ask is that you keep the small credit link in the footer or link back to this repository.
 
-If you have questions, need help setting up or customizing a template, or want to suggest new templates and features, feel free to open an issue or reach out directly.
+If you run into issues, need help setting something up, or have ideas for new templates, feel free to open an issue or reach out.
 
 ---
 
-## Available Templates
+## Templates
 
-| Template | Description | Links |
+| Template | What it is | Link |
 | :--- | :--- | :--- |
-| **Retro Pastel Profile** | Aesthetic retro faux-browser SPA profile template. 100% config-driven via `config.js`, multi-column responsive layout, pure CSS gingham pattern, and zero build step. | [Documentation & Setup](./retro-pastel-profile/README.md) • [Source Folder](./retro-pastel-profile/) |
+| **Retro Pastel Profile** | A cozy retro desktop/browser style profile page with multiple pages, sidebars, and customizable cards. | [Setup Guide](./retro-pastel-profile/README.md) |
 
-*More templates will be added to this repository continuously.*
+More templates will be added as they are built.
 
 ---
 
-## Core Philosophy
+## How It Works
 
-- **Zero Build Tools Required:** Pure HTML5, modern CSS3, and lightweight Vanilla JavaScript. No Node.js, npm, bundlers, or compilation required.
-- **Config-Driven Architecture:** All text, metadata, social links, and images are managed in a single, simple configuration file (`config.js`) so you can update your site without editing HTML markup.
-- **Safe Open-Source Assets:** Clean CC0 vectors, pure CSS patterns, and standard MIT icons.
-- **Instant Deployment:** Ready for instant drag-and-drop or Git-connected deployment on Cloudflare Pages, GitHub Pages, Vercel, and Netlify.
+- **No build steps:** Just simple HTML, CSS, and plain JavaScript. You can double-click `index.html` to open it in your browser right away.
+- **Easy customization:** All your text, links, social handles, and images are set in `config.js`. You don't have to dig through HTML tags to update your info.
+- **Works everywhere:** Host it for free on GitHub Pages, Cloudflare Pages, Netlify, Vercel, or anywhere else that serves static files.
 
 ---
 
 ## Getting Started
 
-1. Clone or download this repository:
+1. Download or clone the repo:
    ```bash
    git clone https://github.com/NottKoneko/WebsiteTemplates-.git
    ```
-2. Open the directory of the template you want to use (for example, `retro-pastel-profile`).
-3. Open `index.html` directly in your web browser to preview it.
-4. Edit `config.js` with your own information, links, and text.
-5. Deploy to your favorite static hosting service (Cloudflare Pages, GitHub Pages, Netlify, Vercel, etc.).
+2. Open the template folder you want to use (e.g. `retro-pastel-profile`).
+3. Open `config.js` in your favorite code or text editor to fill in your name, bio, and links.
+4. Double-click `index.html` to preview your page in any browser.
+5. Upload the files to your web host.
 
 ---
 
-## Attribution & Usage
+## Credit & License
 
-These templates are free to use for any personal or commercial project. If you use them, please maintain attribution by giving credit (for example, retaining the footer credit or including a link back to [NottKoneko](https://github.com/NottKoneko) or this repository).
-
----
-
-## Need Help or Customization Support?
-
-If you need any help customizing your template, running into layout issues, or want assistance deploying to your domain:
-- Open an Issue on this GitHub repository: [New Issue](https://github.com/NottKoneko/WebsiteTemplates-/issues)
-- Reach out to [NottKoneko](https://github.com/NottKoneko) on GitHub.
-
----
-
-## License
-
-All templates in this repository are released under the [MIT License](https://opensource.org/licenses/MIT). You are completely free to use, modify, distribute, and build commercial or personal projects with them, with attribution appreciated.
+These templates are released under the [MIT License](https://opensource.org/licenses/MIT). They are free to use and modify for personal or commercial projects. Please keep the small credit in the footer or link back if you use them.

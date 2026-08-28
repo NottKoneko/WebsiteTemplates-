@@ -1,60 +1,43 @@
 # Retro Pastel Profile Template
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/Vanilla_JS-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Zero-Build](https://img.shields.io/badge/Build-Zero--Dependency-success?style=flat-square)](#)
-[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-Ready-F38020?style=flat-square&logo=cloudflare)](https://pages.cloudflare.com/)
-[![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-Ready-181717?style=flat-square&logo=github)](https://pages.github.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-pink.svg?style=flat-square)](LICENSE)
+A cozy, retro faux-browser profile template for creators, streamers, and artists.
 
-A lightweight, zero-dependency, aesthetic retro pastel profile and bio template. Fully configurable through a single `config.js` file with zero build step required.
+You can use this for your main link page, stream info board, commission sheet, or personal homepage. Everything is styled with soft pastel pinks, a clean gingham pattern, and retro browser UI accents.
 
-This template is free for personal and commercial use. If you use it, please make sure to give credit (e.g. keeping the subtle footer credit line linking to [NottKoneko](https://github.com/NottKoneko)).
+If you use this template, please keep the small credit in the footer linking back to the project.
 
 ---
 
-## Features
+## What is Included
 
-- **Zero Build Step / Plug and Play:** Plain HTML, CSS, and Vanilla JavaScript. Runs directly in any browser or static host.
-- **100% Config-Driven (`config.js`):** Customize creator details, links, stats, schedules, commissions, catalog items, and images without touching HTML markup.
-- **Safe Open-Source Assets:**
-  - Pure CSS dual linear-gradient gingham background (zero proprietary images or vectors).
-  - Clean CC0 heart SVG bullets and standard open-source Feather/Lucide UI icons.
-- **Fully Responsive Multi-Column Layout:** 3-column desktop layout (`22% / 56% / 22%`) that transitions to a mobile-friendly single-column layout.
-- **Multi-Section SPA Navigation:** Dynamic section switching (Home, Menu/Catalog) with browser history support (`#home`, `#menu`) and prev/next controls.
-- **Interactive Toast Notification:** Animated copy-to-clipboard button with visual confirmation popup.
-- **Ultra Lightweight:** Sub-millisecond load times with minimal asset overhead.
+- **Faux browser header:** Retro window buttons, page tabs, and a clickable address bar that copies your URL to the clipboard.
+- **Multi-column layout:** 
+  - **Left sidebar:** Avatar, creator name, quick intro, stats box, favorite things, and stream/content schedule.
+  - **Center area:** Welcome message, bio paragraphs, and organized link groups for socials, tips, streams, and portfolios.
+  - **Right sidebar:** To-do list, status note, upcoming calendar events, and a secondary schedule.
+- **Second page (Menu / Commissions):** A separate view for commission info, rules, and service categories with heart bullet lists.
+- **No build setup required:** Plain HTML, CSS, and JavaScript. It runs immediately in any browser without installing packages or tools.
 
 ---
 
-## File Structure
+## How to Customize
 
-```text
-├── index.html         # Semantic HTML5 structure & icon SVGs
-├── style.css          # CSS design tokens, pure CSS gingham pattern & responsive grids
-├── config.js          # Central configuration file for all content, links & text
-├── app.js             # Lightweight vanilla JS state & section switching router
-├── assets/            # Local images (avatar, banner placeholder)
-└── README.md          # Project documentation & deployment guide
-```
+All the text, links, headings, and images are configured inside [`config.js`](config.js). You do not need to edit `index.html` to update your details.
 
----
+Open `config.js` in a text editor to update any section:
 
-## Customization Guide
-
-You can customize almost everything by editing [`config.js`](config.js):
-
-### 1. Site Metadata & Address Bar Pill
+### 1. Site Title & Address Bar
+Change your page title and the address shown in the top bar:
 ```javascript
 meta: {
-  title: "Your Name Official Site",
+  title: "Your Name - Official Links",
   domainPill: "yourname.com",
   domainUrl: "https://yourname.com",
 }
 ```
 
 ### 2. Header & Banner Image
+Swap out the banner image with your own file in `assets/` or an image link:
 ```javascript
 header: {
   navLinks: [
@@ -62,70 +45,71 @@ header: {
     { id: "menu", label: "menu" },
   ],
   bannerImage: {
-    url: "assets/banner-placeholder.png", // Or external image URL
-    alt: "Banner Image",
-    maxHeight: "180px", // "180px" or "none" for natural aspect ratio
+    url: "assets/banner-placeholder.png",
+    alt: "Banner",
+    maxHeight: "180px",
   },
 }
 ```
 
-### 3. Profile, Stats & Favorite Things (Left Sidebar)
+### 3. Profile & Left Sidebar
+Edit your avatar, name, tagline, stats, and favorite things:
 ```javascript
-homeSection: {
-  leftColumn: {
-    avatarUrl: "assets/avatar-placeholder.png",
-    name: "Your Name",
-    tagline: "Your custom tagline or introduction.",
-    statsButtonLabel: "stats",
-    stats: [
-      { label: "Energy", value: "[4/5]" },
-      { label: "Creativity", value: "[5/5]" },
+leftColumn: {
+  avatarUrl: "assets/avatar-placeholder.png",
+  name: "Your Name",
+  tagline: "Your cozy intro or tagline goes here.",
+  statsButtonLabel: "stats",
+  stats: [
+    { label: "Energy", value: "★★★★☆" },
+    { label: "Creativity", value: "★★★★★" },
+  ],
+  favoriteThings: {
+    title: "FAVORITE THINGS",
+    items: [
+      { category: "Interests", value: "Drawing, Gaming, Music" },
     ],
-    favoriteThings: {
-      title: "FAVORITE THINGS",
-      items: [
-        { category: "Interests", value: "Art, Gaming, Coding" },
-      ],
-    },
-    varietySchedule: {
-      title: "Main schedule",
-      text: "Weekly live schedule details go here.",
-    },
+  },
+  varietySchedule: {
+    title: "Main schedule",
+    text: "Stream schedule details go here.",
   },
 }
 ```
 
-### 4. Links Directory & Paragraphs (Center Column)
+### 4. Welcome Message & Links (Center)
+Add your greeting and group your links by category:
 ```javascript
 centerColumn: {
   heading: "Welcome to my room~",
   subheading: "Official information board & links directory",
   paragraphs: [
-    "Paragraph 1 welcoming your audience.",
-    "Paragraph 2 with updates or community notes.",
+    "Welcome to my corner of the web!",
+    "Add any updates, lore, or community guidelines here.",
   ],
   linkGroups: [
     {
       title: "Social Media",
       links: [
-        { label: "X / Twitter", url: "https://x.com/" },
-        { label: "Instagram", url: "https://instagram.com/" },
+        { label: "Twitter / X", url: "https://x.com/yourhandle" },
+        { label: "Instagram", url: "https://instagram.com/yourhandle" },
       ],
     },
   ],
 }
 ```
 
-### 5. Todos, Status, Calendar & Side Schedule (Right Sidebar)
+### 5. To-Dos, Status & Calendar (Right Sidebar)
+Set your current status note, to-do list items, and upcoming dates:
 ```javascript
 rightColumn: {
   todosTitle: "To dos:",
-  todos: ["Update schedule", "Drink water", "Finish artwork"],
+  todos: ["Update schedule", "Draw new emotes", "Drink water"],
   statusTitle: "status",
-  statusText: "Working on exciting new projects!",
+  statusText: "Working on new art and projects!",
   calendarTitle: "Calendar",
   calendarDate: "Next Event:",
-  calendarEvent: "Community gaming night this Friday at 7pm EST.",
+  calendarEvent: "Community game night this Friday at 7pm EST.",
   sideScheduleTitle: "Side schedule",
   sideScheduleItems: [
     "Every Sunday weekly video release.",
@@ -133,66 +117,60 @@ rightColumn: {
 }
 ```
 
-### 6. Subpage / Service Catalog / Commissions (Menu Section)
+### 6. Commissions & Menu Page
+Update your commission availability, request form link, and service categories:
 ```javascript
 menuSection: {
   leftColumn: {
     commissionsHeading: "Custom Commissions",
     commissionsStatus: "OPEN",
-    commissionsDesc: "Custom commission requests are open.",
+    commissionsDesc: "Custom commission requests are currently open.",
     commissionButton: { label: "Request Form", url: "https://forms.google.com/" },
     disclaimerTitle: "Notice & Policy",
-    disclaimerText: "Terms and guidelines for services.",
+    disclaimerText: "Important terms and guidelines for services.",
   },
   rightColumn: {
     title: "Service Catalog / Menu",
     description: "Browse available services and categories below.",
     categories: [
       {
-        title: "Illustration",
-        items: ["Chibi Icon", "Bust Illustration", "Full Body"],
+        title: "Art & Emotes",
+        items: ["Chibi Icon", "Twitch Emotes", "Character Art"],
       },
     ],
   },
 }
 ```
 
-### 7. Custom Colors & Styling
-To tweak the color palette, open [`style.css`](style.css) and adjust `:root` variables:
+### 7. Colors & Theme
+If you want to change the color palette, open [`style.css`](style.css) and edit the variables at the top of the file:
 ```css
 :root {
-  --bg-page: #FFF2F8;        /* Page background */
+  --bg-page: #FFF2F8;        /* Background color behind the card */
   --bg-card: #FFFFFF;        /* Card background */
   --bg-header: #FFEBF5;      /* Header background */
-  --border-main: #FFD4E9;    /* Borders */
-  --text-main: #FFB3D8;      /* Primary accent color */
-  --text-body: #FFB3D8;      /* Body text color */
+  --border-main: #FFD4E9;    /* Border lines */
+  --text-main: #FFB3D8;      /* Primary pink accent color */
 }
 ```
 
 ---
 
-## Deployment
+## Free Hosting & Deployment
 
-Because this project requires zero compilation or build steps, deployment takes under 1 minute.
+Because this is a static site with no build process, you can deploy it in less than a minute on free hosting services:
 
-### Option A: Cloudflare Pages (Recommended)
-1. Fork or push this repository to GitHub.
-2. Log into the Cloudflare Dashboard and navigate to **Workers & Pages** > **Create application** > **Pages** > **Connect to Git**.
-3. Select your repository.
-4. Set **Build command** to *(leave empty)* and **Build output directory** to `retro-pastel-profile` (or root if deploying standalone).
-5. Click **Save and Deploy**.
+### Cloudflare Pages
+1. Push your files to a GitHub repository.
+2. Go to the Cloudflare dashboard, click **Workers & Pages** > **Create application** > **Pages** > **Connect to Git**.
+3. Select your repository, leave the build command blank, set the output directory to `retro-pastel-profile` (or `/`), and click **Save and Deploy**.
 
-### Option B: GitHub Pages
-1. Push your repository to GitHub.
-2. Go to your repository **Settings** > **Pages**.
-3. Under **Source**, select `Deploy from a branch`.
-4. Choose `main` branch and folder, then click **Save**.
+### GitHub Pages
+1. In your GitHub repository, go to **Settings** > **Pages**.
+2. Under **Source**, choose `Deploy from a branch`, pick `main`, and save.
 
-### Option C: Vercel / Netlify
-- Drag and drop the project folder directly into the Netlify or Vercel dashboard.
-
----
+### Netlify / Vercel
+- Drag and drop the folder directly into the Netlify or Vercel dashboard.
 
 ## Need Help with Customization?
 
@@ -204,8 +182,6 @@ If you want to make changes, add new features, or tweak layouts beyond your tech
 
 ---
 
-## License & Credits
+## License
 
-- **License:** MIT License — free for personal and commercial use (attribution requested).
-- **Built by:** [NottKoneko](https://github.com/NottKoneko)
-- **Vector Icons:** Standard CC0 and Feather Icons (MIT License).
+This template is open-source under the [MIT License](https://opensource.org/licenses/MIT). You are welcome to use and adapt it however you like.
