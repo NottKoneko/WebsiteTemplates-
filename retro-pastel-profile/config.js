@@ -8,8 +8,8 @@ window.SITE_CONFIG = {
   // Website Metadata & Faux Address Bar
   meta: {
     title: "Retro Pastel Profile Template",
-    domainPill: "yourname.carrd.co",
-    domainUrl: "https://yourname.carrd.co",
+    domainPill: "yourdomain.com",
+    domainUrl: "https://yourdomain.com",
   },
 
   // Top Header Chrome & Banner Configuration
