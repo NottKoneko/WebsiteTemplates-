@@ -25,7 +25,8 @@
   --text-accent: #FFB3D8;
 
   --font-main: 'Poppins', sans-serif;
-  --radius-site: 10px;
+  --font-title: 'Poppins', sans-serif;
+  --radius-site: 18px;
   --radius-card: 6px;
   --radius-pill: 9999px;
   --radius-sm: 4px;
@@ -34,7 +35,9 @@
   --transition: 0.2s ease;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -54,6 +57,23 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.profile-name,
+.underlined-title,
+.main-heading,
+.sub-heading,
+.link-group-title,
+.catalog-cat-title,
+.comm-title,
+.comm-status-text {
+  font-family: var(--font-title, 'Poppins', sans-serif);
+}
+
 /* Pure CSS Gingham Grid Background */
 body::before {
   content: '';
@@ -65,7 +85,7 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background-color: var(--bg-page);
-  background-image: 
+  background-image:
     linear-gradient(90deg, rgba(255, 255, 255, 0.55) 50%, transparent 50%),
     linear-gradient(rgba(255, 255, 255, 0.55) 50%, transparent 50%);
   background-size: 40px 40px;
@@ -86,20 +106,35 @@ body::before {
   border-radius: var(--radius-site);
   box-shadow: var(--shadow-site);
   overflow: hidden;
+  animation: siteEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes siteEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==========================================================================
-   HEADER & FAUX-BROWSER TOP CHROME
+   HEADER & FAUX-BROWSER TOP CHROME (Cached & Persistent)
    ========================================================================== */
 
 #header {
   border-bottom: 1px solid var(--border-main);
   background: var(--bg-header);
+  position: relative;
+  z-index: 5;
+  contain: layout paint;
 }
 
 /* Row 1: Compact Icons Bar (Left Aligned) */
 .toolbar-container {
-  padding: 8px 18px;
+  padding: 4px 14px;
   background: var(--bg-header);
   border-bottom: 1px solid var(--border-main);
   display: flex;
@@ -110,7 +145,7 @@ body::before {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .icon-btn {
@@ -118,8 +153,8 @@ body::before {
   border: none;
   cursor: pointer;
   color: var(--text-main);
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -135,8 +170,8 @@ body::before {
 }
 
 .icon-btn svg {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
 }
 
 .icon-deco {
@@ -147,8 +182,8 @@ body::before {
 }
 
 .icon-deco svg {
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
 }
 
 .heart-deco {
@@ -161,29 +196,29 @@ body::before {
 
 /* Row 2: Nav Links & Wide Domain Address Pill */
 .nav-bar-container {
-  padding: 8px 18px;
+  padding: 2px 14px;
   background: var(--bg-header);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
 }
 
 .header-nav-list {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .header-nav-list a {
-  text-decoration: underline;
-  text-decoration-color: var(--border-main);
+  text-decoration: none;
   color: var(--text-main);
-  font-size: 0.84rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  transition: color var(--transition);
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  transition: color var(--transition), text-decoration var(--transition);
   outline: none;
   box-shadow: none;
 }
@@ -194,6 +229,7 @@ body::before {
   outline: none;
   box-shadow: none;
   color: var(--text-accent);
+  text-decoration: underline;
   text-decoration-color: var(--text-accent);
 }
 
@@ -213,13 +249,14 @@ body::before {
   max-width: 440px;
   min-width: 240px;
   background: #FFFFFF;
-  border: 1px solid var(--border-main);
+  border: none;
   border-radius: 0;
-  padding: 4px 14px;
-  font-size: 0.76rem;
+  padding: 2px 10px;
+  font-size: 0.70rem;
+  line-height: 1.54;
   color: var(--text-main);
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   transition: all var(--transition);
   outline: none;
@@ -228,13 +265,15 @@ body::before {
 
 .domain-pill-btn:hover {
   background: #FFFFFF;
-  border-color: var(--border-main);
+  border: none;
+  outline: none;
+  box-shadow: none;
   transform: translateY(-1px);
 }
 
 .domain-pill-btn .globe-icon {
-  width: 15px;
-  height: 15px;
+  width: 15.10px;
+  height: 15.10px;
   color: var(--text-main);
   flex-shrink: 0;
 }
@@ -243,7 +282,8 @@ body::before {
   margin-left: auto;
   text-align: right;
   color: var(--text-main);
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 0.70rem;
   letter-spacing: 0.2px;
 }
 
@@ -277,8 +317,15 @@ body::before {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Columns Grids */
@@ -301,12 +348,12 @@ body::before {
 }
 
 .col-home-center {
-  padding: 0 16px;
+  padding: 0 20px;
   border-right: 1px solid var(--border-main);
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 0.65rem;
 }
 
 .col-home-right {
@@ -319,13 +366,13 @@ body::before {
 /* Subpage / Menu Section: 2 Columns: 28% / 72% Proportions */
 .sub-grid,
 .menu-grid,
-.asmr-grid {
+.catalog-grid {
   grid-template-columns: 28% 72%;
   gap: 0;
 }
 
 .col-sub-left,
-.col-asmr-left {
+.col-catalog-left {
   padding-right: 14px;
   border-right: 1px solid var(--border-main);
   display: flex;
@@ -334,7 +381,7 @@ body::before {
 }
 
 .col-sub-right,
-.col-asmr-right {
+.col-catalog-right {
   padding-left: 18px;
   display: flex;
   flex-direction: column;
@@ -348,10 +395,10 @@ body::before {
 }
 
 /* ==========================================================================
-   SHARED CARRD COMPONENTS & STYLING
+   SHARED THEME COMPONENTS & STYLING
    ========================================================================== */
 
-.carrd-divider {
+.theme-divider {
   border: none;
   border-top: 1px dashed var(--border-main);
   margin: 14px 0;
@@ -439,7 +486,7 @@ body::before {
   gap: 4px;
 }
 
-.carrd-btn-tag {
+.theme-btn-tag {
   display: inline-block;
   align-self: center;
   font-size: 0.74rem;
@@ -493,37 +540,55 @@ body::before {
 }
 
 /* Center Column Typography & Spacing */
-.main-heading {
-  font-size: 1.25rem;
-  font-weight: 700;
-  font-style: italic;
-  color: var(--text-main);
-  margin-bottom: 3px;
+.home-title-block {
+  display: block;
   text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-heading {
+  font-family: var(--font-title, 'Poppins', sans-serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.0;
+  color: var(--text-main);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.12rem;
+}
+
+.main-heading em {
+  font-style: italic;
+  font-weight: inherit;
 }
 
 .sub-heading {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-body);
+  font-family: var(--font-title, 'Poppins', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-main);
   text-align: center;
-  margin-bottom: 14px;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .bio-paragraphs {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 22px;
-  text-align: center;
+  text-align: left;
 }
 
 .bio-paragraphs p {
-  font-size: 0.74rem;
-  line-height: 1.5;
-  color: var(--text-body);
-  margin-bottom: 8px;
-  font-weight: 500;
+  font-family: var(--font-main, 'Poppins', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.875;
+  color: var(--text-main);
+  text-align: left;
+  margin-bottom: 0.75rem;
 }
 
 /* Link Groups & Spacing */
@@ -546,8 +611,8 @@ body::before {
   margin-bottom: 4px;
 }
 
-/* Horizontal Inline Link Rows without Pseudo Heart Bullet */
-.carrd-links-list {
+/* Horizontal Inline Link Rows */
+.theme-links-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -556,7 +621,7 @@ body::before {
   gap: 6px 14px;
 }
 
-.carrd-links-list a {
+.theme-links-list a {
   display: inline-flex;
   align-items: center;
   color: var(--text-body);
@@ -570,7 +635,7 @@ body::before {
   box-shadow: none;
 }
 
-.carrd-links-list a:hover {
+.theme-links-list a:hover {
   color: var(--text-accent);
   text-decoration-color: var(--text-accent);
   transform: translateY(-1px);
@@ -602,8 +667,8 @@ body::before {
   text-decoration-color: var(--text-accent);
 }
 
-/* Boxy Carrd Tables */
-.carrd-table {
+/* Boxy Theme Tables */
+.theme-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.76rem;
@@ -613,7 +678,7 @@ body::before {
   background: #FFFFFF;
 }
 
-.carrd-table th {
+.theme-table th {
   text-align: left;
   font-weight: 700;
   font-size: 0.76rem;
@@ -623,7 +688,7 @@ body::before {
   border-bottom: 1px solid var(--border-main);
 }
 
-.carrd-table td {
+.theme-table td {
   font-size: 0.73rem;
   font-weight: 500;
   color: var(--text-main);
@@ -634,7 +699,7 @@ body::before {
   line-height: 1.35;
 }
 
-.carrd-table tr:last-child td {
+.theme-table tr:last-child td {
   border-bottom: none;
 }
 
@@ -713,7 +778,7 @@ body::before {
   text-align: center;
 }
 
-/* ASMR Menu & Triggers in Right Column */
+/* Service Catalog / Menu in Right Column */
 .menu-desc {
   font-size: 0.76rem;
   font-weight: 500;
@@ -723,19 +788,19 @@ body::before {
   margin-bottom: 8px;
 }
 
-.asmr-categories-list {
+.catalog-categories-list {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.asmr-category-block {
+.catalog-category-block {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.asmr-cat-title {
+.catalog-cat-title {
   font-size: 0.96rem;
   font-weight: 700;
   color: var(--text-main);
@@ -881,13 +946,13 @@ body::before {
 
   .sub-grid,
   .menu-grid,
-  .asmr-grid {
+  .catalog-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
   .col-sub-left,
-  .col-asmr-left {
+  .col-catalog-left {
     padding-right: 0;
     border-right: none;
     border-bottom: 1px solid var(--border-main);
@@ -895,7 +960,7 @@ body::before {
   }
 
   .col-sub-right,
-  .col-asmr-right {
+  .col-catalog-right {
     padding-left: 0;
   }
 

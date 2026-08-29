@@ -124,11 +124,6 @@ window.SITE_CONFIG = {
         "⧽・Every Sunday weekly video release.",
         "・Every Friday special community gaming night at 7pm EST.",
       ],
-      asmrScheduleTitle: "Side schedule",
-      asmrScheduleItems: [
-        "⧽・Every Sunday weekly video release.",
-        "・Every Friday special community gaming night at 7pm EST.",
-      ],
     },
   },
 

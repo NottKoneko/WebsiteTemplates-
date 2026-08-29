@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="site-wrapper">
@@ -75,14 +75,14 @@
             <div class="domain-pill-box">
               <button type="button" id="domain-copy-btn" class="domain-pill-btn" title="Copy website URL">
                 <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                <span id="domain-pill-text">yourname.carrd.co</span>
+                <span id="domain-pill-text">yourdomain.com</span>
               </button>
             </div>
           </div>
 
           <!-- Hero Image Banner -->
           <div class="banner-container">
-            <img id="banner-img" class="hero-banner-image" src="" alt="Banner">
+            <img id="banner-img" class="hero-banner-image" src="assets/banner-placeholder.png" alt="Banner" loading="eager">
           </div>
         </header>
 
@@ -93,23 +93,23 @@
             <!-- Left Column: Avatar, Stats, Favorites, Schedule -->
             <aside class="col col-home-left">
               <div class="avatar-box">
-                <img id="home-avatar" class="avatar-image" src="" alt="Avatar">
+                <img id="home-avatar" class="avatar-image" src="assets/avatar-placeholder.png" alt="Avatar" loading="eager">
               </div>
               <h2 id="home-name" class="profile-name"></h2>
               <div id="home-tagline" class="tagline-box"></div>
               
-              <hr class="carrd-divider">
+              <hr class="theme-divider">
               
               <div class="stats-box">
                 <h3 id="home-stats-btn" class="underlined-title">stats</h3>
                 <ul id="home-stats-list" class="stats-list"></ul>
               </div>
 
-              <hr class="carrd-divider">
+              <hr class="theme-divider">
 
               <div id="home-favorites" class="favorites-box"></div>
 
-              <hr class="carrd-divider">
+              <hr class="theme-divider">
 
               <div class="schedule-box">
                 <h3 id="home-variety-title" class="underlined-title"></h3>
@@ -119,8 +119,10 @@
 
             <!-- Center Column: Welcome, Bio, Links Groups -->
             <main class="col col-home-center">
-              <h1 id="home-heading" class="main-heading"></h1>
-              <p id="home-subheading" class="sub-heading"></p>
+              <div class="home-title-block">
+                <h1 id="home-heading" class="main-heading"></h1>
+                <p id="home-subheading" class="sub-heading"></p>
+              </div>
               <div id="home-paragraphs" class="bio-paragraphs"></div>
               
               <div id="home-link-groups" class="link-groups-container"></div>
@@ -131,33 +133,33 @@
               <h3 class="underlined-title">navigation</h3>
               <ul class="sidebar-nav-list section-nav-target"></ul>
 
-              <hr class="carrd-divider">
+              <hr class="theme-divider">
 
               <div class="todos-box">
-                <table class="carrd-table">
+                <table class="theme-table">
                   <thead><tr><th id="home-todos-title">To dos:</th></tr></thead>
                   <tbody id="home-todos-body"></tbody>
                 </table>
               </div>
 
-              <hr class="carrd-divider">
+              <hr class="theme-divider">
 
               <div class="status-widget">
                 <h3 id="home-status-title" class="underlined-title"></h3>
                 <p id="home-status-text" class="status-msg"></p>
               </div>
 
-              <hr class="carrd-divider">
+              <hr class="theme-divider">
 
               <div class="calendar-box">
                 <h3 id="home-calendar-title" class="underlined-title"></h3>
-                <table class="carrd-table">
+                <table class="theme-table">
                   <thead><tr><th id="home-calendar-date"></th></tr></thead>
                   <tbody><tr><td id="home-calendar-event"></td></tr></tbody>
                 </table>
               </div>
 
-              <hr class="carrd-divider">
+              <hr class="theme-divider">
 
               <div class="schedule-box">
                 <h3 id="home-side-sched-title" class="underlined-title"></h3>
@@ -197,7 +199,7 @@
             <main class="col col-sub-right">
               <h1 id="menu-title" class="underlined-title big-title"></h1>
               <p id="menu-desc" class="menu-desc"></p>
-              <div id="menu-categories" class="asmr-categories-list"></div>
+              <div id="menu-categories" class="catalog-categories-list"></div>
             </main>
 
           </div>

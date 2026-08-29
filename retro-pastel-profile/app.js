@@ -63,22 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
   setTxt("home-variety-title", hl.varietySchedule.title); setTxt("home-variety-text", hl.varietySchedule.text);
   setHtml("home-heading", `<em>${hc.heading}</em>`); setTxt("home-subheading", hc.subheading);
   setHtml("home-paragraphs", hc.paragraphs.map(p => `<p class="p">${p}</p>`).join(""));
-  setHtml("home-link-groups", hc.linkGroups.map(g => `<div class="link-group"><h3 class="link-group-title">${g.title}</h3><ul class="carrd-links-list">${g.links.map(l => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`).join("")}</ul></div>`).join(""));
+  setHtml("home-link-groups", hc.linkGroups.map(g => `<div class="link-group"><h3 class="link-group-title">${g.title}</h3><ul class="theme-links-list">${g.links.map(l => `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`).join("")}</ul></div>`).join(""));
   setTxt("home-todos-title", hr.todosTitle); setHtml("home-todos-body", hr.todos.map(t => `<tr><td>${t}</td></tr>`).join(""));
   setTxt("home-status-title", hr.statusTitle); setTxt("home-status-text", hr.statusText.startsWith("♥ ") ? hr.statusText : `♥ ${hr.statusText}`);
   setTxt("home-calendar-title", hr.calendarTitle); setTxt("home-calendar-date", hr.calendarDate); setTxt("home-calendar-event", hr.calendarEvent);
-  setTxt("home-side-sched-title", hr.asmrScheduleTitle || hr.sideScheduleTitle || "Side schedule");
-  setHtml("home-side-sched-items", (hr.asmrScheduleItems || hr.sideScheduleItems || []).map(i => `<p>${i}</p>`).join(""));
+  setTxt("home-side-sched-title", hr.sideScheduleTitle || "Side schedule");
+  setHtml("home-side-sched-items", (hr.sideScheduleItems || []).map(i => `<p>${i}</p>`).join(""));
 
   // Subpage Section (Menu / Commissions / Catalog)
-  const sub = cfg.menuSection || cfg.asmrSection;
+  const sub = cfg.menuSection;
   if (sub) {
     const al = sub.leftColumn, ar = sub.rightColumn;
     setTxt("menu-comm-heading", al.commissionsHeading); setTxt("menu-comm-status", al.commissionsStatus); setTxt("menu-comm-desc", al.commissionsDesc);
     const cb = document.getElementById("menu-comm-btn"); if (cb) { cb.textContent = al.commissionButton.label; cb.href = al.commissionButton.url; }
     setTxt("menu-disclaimer-title", al.disclaimerTitle); setTxt("menu-disclaimer-text", al.disclaimerText);
     setTxt("menu-title", ar.title); setTxt("menu-desc", ar.description);
-    setHtml("menu-categories", ar.categories.map(c => `<div class="asmr-category-block"><h3 class="asmr-cat-title">${c.title}</h3><ul class="triggers-items-list">${c.items.map(it => `<li>${it}</li>`).join("")}</ul></div>`).join(""));
+    setHtml("menu-categories", ar.categories.map(c => `<div class="catalog-category-block"><h3 class="catalog-cat-title">${c.title}</h3><ul class="triggers-items-list">${c.items.map(it => `<li>${it}</li>`).join("")}</ul></div>`).join(""));
   }
   setHtml("footer-text", cfg.footer.text);
 
