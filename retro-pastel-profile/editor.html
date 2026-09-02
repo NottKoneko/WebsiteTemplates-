@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Pastel Profile - Template Editor</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Retro Pastel Profile - Template Editor">
+  <meta name="description" content="Workspace editor for Retro Pastel Profile template.">
+  <meta name="theme-color" content="#FFB3D8">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="editor.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="editor-mode show-outlines">
+
+  <!-- ==========================================================================
+       TOP APPLICATION BAR
+       ========================================================================== -->
+  <header class="editor-topbar">
+    <div class="editor-topbar-left">
+      <a href="../index.html" class="editor-back-link" title="Back to templates index">
+        <span>&larr; templates</span>
+      </a>
+      <span class="editor-title-badge">Retro Pastel Profile</span>
+      <div class="editor-save-status">
+        <span class="status-dot"></span>
+        <span id="save-status-text">saved</span>
+      </div>
+    </div>
+
+    <!-- Center: View Page Switcher -->
+    <div class="editor-topbar-center">
+      <button type="button" class="editor-page-tab active" data-section="home">home</button>
+      <button type="button" class="editor-page-tab" data-section="menu">menu / commissions</button>
+    </div>
+
+    <!-- Right: Tool Actions -->
+    <div class="editor-topbar-right">
+      <button type="button" id="btn-tutorial" class="editor-bar-btn" title="How to use the editor">
+        <svg class="editor-btn-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z"/></svg> guide
+      </button>
+      <button type="button" id="btn-toggle-outlines" class="editor-bar-btn active" title="Toggle visual edit outlines">
+        outlines: on
+      </button>
+      <button type="button" id="btn-undo" class="editor-bar-btn" title="Undo (Ctrl+Z)" disabled>
+        undo
+      </button>
+      <button type="button" id="btn-redo" class="editor-bar-btn" title="Redo (Ctrl+Y)" disabled>
+        redo
+      </button>
+      <button type="button" id="btn-reset" class="editor-bar-btn" title="Reset all changes to defaults">
+        reset
+      </button>
+      <button type="button" id="btn-finish" class="editor-bar-btn editor-btn-export" title="Export config.js">
+        export config
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN WORKSPACE (LEFT INSPECTOR + RIGHT LIVE CANVAS)
+       ========================================================================== -->
+  <div class="editor-workspace">
+    
+    <!-- LEFT SIDEBAR INSPECTOR -->
+    <aside class="editor-sidebar">
+      <!-- Top Tab Switcher: Edit Section vs Page Structure -->
+      <div class="sidebar-tab-switcher">
+        <button type="button" id="sidebar-tab-edit" class="sidebar-tab-btn active"><svg class="editor-btn-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg> Edit Section</button>
+        <button type="button" id="sidebar-tab-outline" class="sidebar-tab-btn"><svg class="editor-btn-svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> Page Structure</button>
+      </div>
+
+      <!-- Header for Edit Section Mode -->
+      <div id="sidebar-edit-header" class="editor-sidebar-header">
+        <div class="active-section-card">
+          <div class="active-section-meta">
+            <span id="active-sec-badge" class="section-badge">Center Column</span>
+            <div class="section-action-btns-row">
+              <button type="button" id="btn-sec-up" class="editor-btn-action-sm" title="Move section up">
+                <svg class="editor-arrow-svg" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg> up
+              </button>
+              <button type="button" id="btn-sec-down" class="editor-btn-action-sm" title="Move section down">
+                <svg class="editor-arrow-svg" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> down
+              </button>
+              <button type="button" id="btn-sec-dup" class="editor-btn-action-sm" title="Duplicate section"><svg class="editor-btn-svg" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> dup</button>
+              <button type="button" id="btn-sec-del" class="editor-btn-action-sm editor-btn-remove-sec" title="Delete section"><svg class="editor-btn-svg" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+            </div>
+          </div>
+          <h3 id="active-sec-title" class="section-title-heading">Welcome to my room~</h3>
+        </div>
+
+        <div class="editor-sidebar-subrow">
+          <div class="editor-view-modes">
+            <button type="button" id="btn-sidebar-form" class="editor-mode-btn active">form</button>
+            <button type="button" id="btn-sidebar-raw" class="editor-mode-btn">raw json</button>
+          </div>
+          <button type="button" id="btn-open-add-section" class="editor-btn-action-sm editor-btn-add-sec" title="Add a section to this column">+ add section</button>
+        </div>
+      </div>
+
+      <!-- Header for Page Structure Mode -->
+      <div id="sidebar-outline-header" class="editor-sidebar-header" style="display: none;">
+        <div class="editor-sidebar-subrow">
+          <span style="font-size: 0.76rem; font-weight: 700; color: #444;">Page Sections Outline</span>
+          <button type="button" id="btn-outline-add-section" class="editor-btn-action-sm editor-btn-add-sec">+ add section</button>
+        </div>
+      </div>
+
+      <!-- Scrollable Sidebar Body -->
+      <div class="editor-sidebar-body">
+        <!-- View 1: Active Section Edit Form -->
+        <div id="view-edit-section">
+          <div id="sidebar-form-panel"></div>
+          <div id="sidebar-raw-panel" class="editor-raw-panel">
+            <div id="sidebar-raw-error" class="editor-raw-error"></div>
+            <textarea id="sidebar-raw-textarea" class="editor-raw-textarea" spellcheck="false"></textarea>
+          </div>
+        </div>
+
+        <!-- View 2: Page Structure Tree -->
+        <div id="view-page-outline" style="display: none;"></div>
+      </div>
+    </aside>
+
+    <!-- RIGHT LIVE PREVIEW CANVAS -->
+    <main class="editor-preview-canvas">
+      <div class="site-wrapper">
+        <div class="site-main" role="main">
+          <div class="inner">
+
+            <!-- Header Component -->
+            <header id="header">
+              <!-- Row 1: Top Faux-Browser Toolbar Icons -->
+              <div class="toolbar-container">
+                <ul class="icons-bar">
+                  <li>
+                    <button type="button" class="icon-btn prev-btn" onclick="window.editorSwitchSection('home');" aria-label="Home Section" title="Home Section">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="icon-btn next-btn" onclick="window.editorSwitchSection('menu');" aria-label="Menu Section" title="Menu Section">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="icon-btn" onclick="location.reload();" aria-label="Refresh" title="Refresh">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                    </button>
+                  </li>
+                  <li>
+                    <span class="icon-deco heart-deco" title="Heart">
+                      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="icon-deco wifi-deco" title="Wifi">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Row 2: Section Nav Bar & Domain Pill -->
+              <div class="nav-bar-container">
+                <nav class="nav-links-bar" aria-label="Section Navigation">
+                  <ul id="header-nav-links" class="header-nav-list"></ul>
+                </nav>
+                <div class="domain-pill-box editor-widget-wrapper" data-col-key="meta" data-widget-index="0" title="Click to edit website metadata & domain">
+                  <button type="button" id="domain-copy-btn" class="domain-pill-btn" title="Click to edit metadata">
+                    <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span id="domain-pill-text">yourdomain.com</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Hero Image Banner -->
+              <div class="banner-container editor-widget-wrapper" data-col-key="banner" data-widget-index="0" title="Click to edit header banner image">
+                <img id="banner-img" class="hero-banner-image" src="assets/banner-placeholder.png" alt="Banner" loading="eager">
+              </div>
+            </header>
+
+            <!-- SECTION 1: HOME (3 Columns Desktop) -->
+            <section id="home-section" class="site-section active">
+              <div class="columns-grid home-grid">
+                
+                <!-- Left Column -->
+                <aside class="col col-home-left"></aside>
+
+                <!-- Center Column -->
+                <main class="col col-home-center"></main>
+
+                <!-- Right Column -->
+                <aside class="col col-home-right"></aside>
+
+              </div>
+            </section>
+
+            <!-- SECTION 2: SUBPAGE / MENU (2 Columns Desktop) -->
+            <section id="menu-section" class="site-section inactive">
+              <div class="columns-grid sub-grid">
+                
+                <!-- Left Column -->
+                <aside class="col col-sub-left"></aside>
+
+                <!-- Right Column -->
+                <main class="col col-sub-right"></main>
+
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+        <!-- Floating Footer -->
+        <footer id="footer" class="site-footer">
+          <p id="footer-text" class="footer-copy"></p>
+        </footer>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 1: ADD SECTION PICKER
+       ========================================================================== -->
+  <div id="add-section-modal" class="editor-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="editor-modal-card" style="max-width: 480px;">
+      <div class="editor-modal-header">
+        <h3 class="editor-modal-title">add section to column</h3>
+        <button type="button" class="editor-modal-close-btn" onclick="window.closeModal('add-section-modal')" title="Close">×</button>
+      </div>
+      <div class="editor-modal-body">
+        <div id="add-section-list" class="section-picker-list"></div>
+      </div>
+      <div class="editor-modal-footer">
+        <button type="button" class="editor-bar-btn" onclick="window.closeModal('add-section-modal')">close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: EXPORT CONFIG CODE MODAL
+       ========================================================================== -->
+  <div id="finish-export-modal" class="editor-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="editor-modal-card">
+      <div class="editor-modal-header">
+        <h3 class="editor-modal-title">export configuration</h3>
+        <button type="button" class="editor-modal-close-btn" onclick="window.closeModal('finish-export-modal')" title="Close">×</button>
+      </div>
+      <div class="editor-modal-body">
+        <p class="export-note">
+          Replace the content of <code>config.js</code> in your repository with the code below, or download the file directly.
+        </p>
+
+        <div class="export-code-container">
+          <div class="export-code-header">
+            <span class="export-code-title">config.js</span>
+            <button type="button" id="btn-copy-code" class="editor-bar-btn" style="padding: 2px 8px; font-size: 0.70rem;">
+              copy code
+            </button>
+          </div>
+          <pre id="export-code-block" class="export-code-block"></pre>
+        </div>
+      </div>
+      <div class="editor-modal-footer">
+        <button type="button" class="editor-bar-btn" onclick="window.closeModal('finish-export-modal')">close</button>
+        <button type="button" id="btn-download-code" class="editor-bar-btn editor-btn-export">
+          download config.js
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 3: RESET CONFIRMATION
+       ========================================================================== -->
+  <div id="reset-confirm-modal" class="editor-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="editor-modal-card" style="max-width: 360px;">
+      <div class="editor-modal-header">
+        <h3 class="editor-modal-title">reset confirmation</h3>
+        <button type="button" class="editor-modal-close-btn" onclick="window.closeModal('reset-confirm-modal')" title="Close">×</button>
+      </div>
+      <div class="editor-modal-body">
+        <div class="reset-confirm-box">
+          <h3>Reset to defaults?</h3>
+          <p>This will erase all draft customizations and restore the original template.</p>
+        </div>
+      </div>
+      <div class="editor-modal-footer">
+        <button type="button" class="editor-bar-btn" onclick="window.closeModal('reset-confirm-modal')">cancel</button>
+        <button type="button" id="btn-confirm-reset" class="editor-bar-btn" style="background: #FFF5F5; color: #D32F2F; border-color: #FFCDD2;">
+          reset
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 4: TUTORIAL GUIDE
+       ========================================================================== -->
+  <div id="tutorial-modal" class="editor-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="editor-modal-card" style="max-width: 520px;">
+      <div class="editor-modal-header">
+        <h3 class="editor-modal-title"><svg class="editor-btn-svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z"/></svg> quick template guide</h3>
+        <button type="button" class="editor-modal-close-btn" onclick="window.closeModal('tutorial-modal')" title="Close">×</button>
+      </div>
+      <div class="editor-modal-body">
+        <div class="tutorial-step-list">
+          <div class="tutorial-step-card">
+            <div class="tutorial-step-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>
+            </div>
+            <div class="tutorial-step-content">
+              <h4>1. Click Anything to Edit</h4>
+              <p>Click on any text, profile card, link box, schedule, or top domain bar in the preview to edit its content in the left inspector.</p>
+            </div>
+          </div>
+          <div class="tutorial-step-card">
+            <div class="tutorial-step-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            </div>
+            <div class="tutorial-step-content">
+              <h4>2. Add & Duplicate Sections</h4>
+              <p>Hover over any section to duplicate it (or click the duplicate icon), or click <code>+ add section</code> at the bottom of any column to insert new widgets.</p>
+            </div>
+          </div>
+          <div class="tutorial-step-card">
+            <div class="tutorial-step-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </div>
+            <div class="tutorial-step-content">
+              <h4>3. Reorder in Page Structure</h4>
+              <p>Switch to the <strong>Page Structure</strong> tab in the sidebar to see an overview of all columns and reorder items with the up/down arrows.</p>
+            </div>
+          </div>
+          <div class="tutorial-step-card">
+            <div class="tutorial-step-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <div class="tutorial-step-content">
+              <h4>4. Export config.js</h4>
+              <p>When you're happy with your design, click <strong>export config</strong> to download or copy your code and replace <code>config.js</code> in your GitHub repo!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="editor-modal-footer">
+        <button type="button" class="editor-bar-btn editor-btn-export" onclick="window.closeModal('tutorial-modal')">
+          Got it, let's start!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-popup" role="status" aria-live="polite">Saved</div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>

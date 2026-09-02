@@ -24,6 +24,16 @@ If you use this template, please keep the small credit in the footer linking bac
 
 ## How to Customize
 
+You can customize this template in two simple ways:
+
+### Option A: Use the Interactive Web Editor (Easiest ✨)
+1. Open the [**Visual Template Editor**](editor.html) in your browser.
+2. Click directly on any highlighted section on the canvas (avatar, bio, links, stats, schedules, commissions, top address bar) to edit in real time.
+3. You can also duplicate sections, reorder them up/down, or add new widgets to any column.
+4. Click **export config** at the top right, then **copy code** or **download `config.js`**.
+5. Replace the `config.js` file in your repository and deploy!
+
+### Option B: Edit `config.js` Directly in a Code Editor
 All the text, links, headings, and images are configured inside [`config.js`](config.js). You do not need to edit `index.html` to update your details.
 
 Open `config.js` in a text editor to update any section:
