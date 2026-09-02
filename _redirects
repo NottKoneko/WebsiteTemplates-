@@ -1,8 +1,7 @@
-# Cloudflare Pages Redirects / Rewrites
-/previewsite/retro-pastel-profile/editor   /retro-pastel-profile/editor.html  200
-/previewsite/retro-pastel-profile/edit     /retro-pastel-profile/editor.html  200
-/previewsite/retro-pastel-profile/*        /retro-pastel-profile/:splat       200
-/previewsite/retro-pastel-profile/         /retro-pastel-profile/index.html   200
-/previewsite/retro-pastel-profile          /retro-pastel-profile/index.html   200
-/retro-pastel-profile/editor               /retro-pastel-profile/editor.html  200
-/retro-pastel-profile/edit                 /retro-pastel-profile/editor.html  200
+# Cloudflare Pages Redirects
+/previewsite/retro-pastel-profile/editor.html  /retro-pastel-profile/editor.html  301
+/previewsite/retro-pastel-profile/editor       /retro-pastel-profile/editor.html  301
+/previewsite/retro-pastel-profile/edit         /retro-pastel-profile/editor.html  301
+/previewsite/retro-pastel-profile/*            /retro-pastel-profile/:splat       301
+/previewsite/retro-pastel-profile/             /retro-pastel-profile/             301
+/previewsite/retro-pastel-profile              /retro-pastel-profile/             301
