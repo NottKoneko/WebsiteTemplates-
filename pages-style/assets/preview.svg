@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="prevBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09090b"/>
+      <stop offset="50%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#prevBg)"/>
+  <rect x="40" y="40" width="1120" height="550" fill="none" stroke="#27272a" stroke-width="2"/>
+  <rect x="50" y="50" width="1100" height="530" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
+
+  <rect x="100" y="120" width="220" height="34" fill="#ffffff" rx="2"/>
+  <text x="210" y="142" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#000000" letter-spacing="3" text-anchor="middle">WEBSITE TEMPLATE</text>
+
+  <text x="100" y="240" font-family="sans-serif" font-size="52" font-weight="900" fill="#ffffff" letter-spacing="2">PAGES STYLE</text>
+  <text x="100" y="300" font-family="'Courier New', monospace" font-size="22" fill="#a1a1aa" letter-spacing="3">EDITORIAL CREATOR &amp; PORTFOLIO TEMPLATE</text>
+  
+  <line x1="100" y1="340" x2="600" y2="340" stroke="#3f3f46" stroke-width="1"/>
+
+  <text x="100" y="390" font-family="sans-serif" font-size="16" fill="#71717a">✦ 6 Modular Pages: Home, About / Lore, Commissions, TOS, Portfolio, Contact</text>
+  <text x="100" y="425" font-family="sans-serif" font-size="16" fill="#71717a">✦ Centralized config.js: Customize text, links, rates, and imagery in seconds</text>
+  <text x="100" y="460" font-family="sans-serif" font-size="16" fill="#71717a">✦ Responsive high-contrast editorial layout with zero build dependencies</text>
+
+  <g transform="translate(900, 315)">
+    <circle cx="0" cy="0" r="160" fill="none" stroke="#27272a" stroke-width="2"/>
+    <circle cx="0" cy="0" r="130" fill="none" stroke="#ffffff" stroke-width="1" stroke-dasharray="12 8" opacity="0.4"/>
+    <circle cx="0" cy="0" r="60" fill="#27272a"/>
+    <text x="0" y="8" font-family="'Courier New', monospace" font-size="16" fill="#ffffff" letter-spacing="3" text-anchor="middle">PREVIEW</text>
+  </g>
+
+  <text x="100" y="530" font-family="'Courier New', monospace" font-size="13" fill="#52525b" letter-spacing="2">FREE &amp; OPEN SOURCE • MIT LICENSE</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750">
+  <defs>
+    <linearGradient id="aboutBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#0c0c0e"/>
+    </linearGradient>
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1" fill="#3f3f46"/>
+    </pattern>
+    <linearGradient id="accentGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#71717a" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background & Dot Grid -->
+  <rect width="600" height="750" fill="url(#aboutBg)" rx="8"/>
+  <rect width="600" height="750" fill="url(#dotGrid)" opacity="0.8" rx="8"/>
+
+  <!-- Outer & Inner Technical Frames -->
+  <rect x="24" y="24" width="552" height="702" fill="none" stroke="#27272a" stroke-width="2" rx="4"/>
+  <rect x="34" y="34" width="532" height="682" fill="none" stroke="#ffffff" stroke-width="0.75" opacity="0.15" rx="2"/>
+
+  <!-- Corner Accent Ticks -->
+  <path d="M 24 44 L 24 24 L 44 24" fill="none" stroke="#71717a" stroke-width="2.5"/>
+  <path d="M 576 44 L 576 24 L 556 24" fill="none" stroke="#71717a" stroke-width="2.5"/>
+  <path d="M 24 706 L 24 726 L 44 726" fill="none" stroke="#71717a" stroke-width="2.5"/>
+  <path d="M 576 706 L 576 726 L 556 726" fill="none" stroke="#71717a" stroke-width="2.5"/>
+
+  <!-- Top Category Tag -->
+  <rect x="200" y="60" width="200" height="28" fill="#27272a" rx="4"/>
+  <text x="300" y="78" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#e4e4e7" letter-spacing="3" text-anchor="middle">CHARACTER ART</text>
+
+  <!-- Center Abstract Silhouette & Geometric Rings -->
+  <g transform="translate(300, 340)">
+    <!-- Concentric Technical Circles -->
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#27272a" stroke-width="1.5" stroke-dasharray="8 6"/>
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#3f3f46" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="70" fill="#18181b" stroke="#52525b" stroke-width="1.5"/>
+
+    <!-- Subtle Geometric Silhouette / Head & Shoulders Shape -->
+    <path d="M -80 130 C -80 70, -50 40, 0 40 C 50 40, 80 70, 80 130 Z" fill="#27272a"/>
+    <circle cx="0" cy="-10" r="42" fill="url(#accentGlow)"/>
+
+    <!-- Decorative Crosshairs & Sparkles -->
+    <line x1="-155" y1="0" x2="-125" y2="0" stroke="#71717a" stroke-width="1.5"/>
+    <line x1="125" y1="0" x2="155" y2="0" stroke="#71717a" stroke-width="1.5"/>
+    <line x1="0" y1="-155" x2="0" y2="-125" stroke="#71717a" stroke-width="1.5"/>
+    <line x1="0" y1="125" x2="0" y2="155" stroke="#71717a" stroke-width="1.5"/>
+
+    <!-- Small Sparkle Stars -->
+    <path d="M -90 -90 L -86 -102 L -82 -90 L -70 -86 L -82 -82 L -86 -70 L -90 -82 L -102 -86 Z" fill="#ffffff" opacity="0.6"/>
+    <path d="M 90 -90 L 94 -102 L 98 -90 L 110 -86 L 98 -82 L 94 -70 L 90 -82 L 78 -86 Z" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- Bottom Labels -->
+  <text x="300" y="585" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#ffffff" letter-spacing="4" text-anchor="middle">PORTRAIT PLACEHOLDER</text>
+  <text x="300" y="620" font-family="'Courier New', monospace" font-size="12" fill="#a1a1aa" letter-spacing="2" text-anchor="middle">Replace with your character or art</text>
+  <text x="300" y="645" font-family="'Courier New', monospace" font-size="11" fill="#71717a" letter-spacing="1" text-anchor="middle">Aspect Ratio: 3:4 • 300 DPI</text>
+</svg>

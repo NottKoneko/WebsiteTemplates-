@@ -5,3 +5,8 @@
 /previewsite/retro-pastel-profile/*            /retro-pastel-profile/:splat       301
 /previewsite/retro-pastel-profile/             /retro-pastel-profile/             301
 /previewsite/retro-pastel-profile              /retro-pastel-profile/             301
+
+/previewsite/pages-style/*                     /pages-style/:splat                301
+/previewsite/pages-style/                      /pages-style/                      301
+/previewsite/pages-style                       /pages-style/                      301
+

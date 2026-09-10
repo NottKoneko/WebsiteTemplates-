@@ -15,6 +15,7 @@ If you run into issues, need help setting something up, or have ideas for new te
 | Template | What it is | Links |
 | :--- | :--- | :--- |
 | **Retro Pastel Profile** | A cozy retro desktop/browser style profile page with multiple pages, sidebars, and customizable cards. | [Live Preview](https://templates.notkoneko.space/retro-pastel-profile/) • [Web Editor](https://templates.notkoneko.space/retro-pastel-profile/editor.html) • [Setup Guide](./retro-pastel-profile/README.md) |
+| **Pages Style** | A bold, high-contrast monochrome editorial creator portfolio, commission sheet, lore board, and client inquiry portal. | [Live Preview](https://templates.notkoneko.space/pages-style/) • [Setup Guide](./pages-style/README.md) |
 
 More templates will be added as they are built.
 

@@ -1,8 +1,10 @@
 # Archives & working backups
 **/archive/
 **/index-og.md
+**/Reference/
 archive/
 index-og.md
+Reference/
 
 # System files
 .DS_Store

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREATOR — Portfolio &amp; Commission Guide</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="CREATOR — Portfolio &amp; Commission Guide">
+  <meta name="description" content="Personal creator site, portfolio showcase, and commission guidelines skeleton template.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Open Graph / Discord Embed -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:title" content="CREATOR — Portfolio &amp; Commission Guide">
+  <meta property="og:description" content="Personal creator site, portfolio showcase, and commission guidelines skeleton template.">
+  <meta property="og:image" content="assets/preview.svg">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand:ital,wght@0,400;1,400&family=Tajawal:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="site-wrapper">
+    <main class="site-main" role="main">
+      <div class="inner">
+
+        <!-- ==================== HEADER ==================== -->
+        <header id="site-header" class="site-header">
+          <div class="header-top-bar">
+            <p id="header-updated" class="site-updated-text">Site Last Updated 01/01/26</p>
+          </div>
+
+          <div class="header-logo-box">
+            <img id="header-avatar" class="header-logo-img" src="assets/logo.svg" alt="Creator Mascot">
+          </div>
+
+          <h1 id="header-name" class="creator-title">C R E A T O R</h1>
+          <p id="header-tagline" class="creator-subtitle">Illustration, Graphic Design, &amp; Creative Direction</p>
+
+          <!-- Navigation Links -->
+          <nav class="header-nav-bar" aria-label="Section Navigation">
+            <ul id="header-nav-list" class="nav-button-group"></ul>
+          </nav>
+        </header>
+
+        <!-- ==================== SECTION 1: HOME ==================== -->
+        <section id="home-section" class="site-section active">
+          <h2 class="section-title">H O M E</h2>
+          <hr class="divider-hatched">
+
+          <div class="home-two-col">
+            <!-- Left: 16:9 Media Embed + Credits -->
+            <div class="home-left-col">
+              <div class="media-aspect-ratio">
+                <iframe id="home-video-iframe" class="media-player" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?rel=0&amp;controls=1" allowfullscreen="1"></iframe>
+              </div>
+              <p id="home-credits-text" class="home-credits-caption"></p>
+            </div>
+
+            <!-- Right: Introduction & News -->
+            <div class="home-right-col">
+              <!-- Introduction -->
+              <div class="info-block">
+                <h3 class="block-title">
+                  <svg class="block-icon" viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M14.6,9.5l3.2,3.3h17.9c1.2,0,2.1,0.9,2.1,2.1v17.4c0,1.2-0.9,2.1-2.1,2.1H4.3c-1.2,0-2.1-0.9-2.1-2.1V7.7 c0-1.2,0.9-2.1,2.1-2.1h7.1C12.5,5.6,13.8,7.1,14.6,9.5z M34.6,16H16.2l-3.2-3.3H4.3v17.4h30.3V16z"/></svg>
+                  <span id="home-intro-tag">I N T R O D U C T I O N</span>
+                </h3>
+                <p id="home-intro-greeting" class="intro-greeting"></p>
+                <div id="home-intro-paragraphs" class="intro-paragraphs"></div>
+              </div>
+
+              <!-- News -->
+              <div class="info-block" style="margin-top: 2rem;">
+                <h3 class="block-title">
+                  <svg class="block-icon" viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M20,3C10.6,3,3,10.6,3,20s7.6,17,17,17s17-7.6,17-17S29.4,3,20,3z M13,29.3c-1.3,0-2.3-1-2.3-2.3c0-1.3,1-2.3,2.3-2.3 s2.3,1,2.3,2.3C15.3,28.3,14.3,29.3,13,29.3z M20.9,29.3c0-2.8-1.1-5.3-3.1-7.3c-2-2-4.5-3.1-7.3-3.1v-3.7 c3.8,0,7.3,1.5,10,4.1c2.7,2.7,4.1,6.2,4.1,10H20.9z M28.2,29.3c0-4.8-1.9-9.2-5.3-12.6C19.5,13.3,15.1,11.4,10.3,11.4V7.7 c5.8,0,11.1,2.3,15.2,6.4c4.1,4.1,6.4,9.4,6.4,15.2H28.2z"/></svg>
+                  <span id="home-news-tag">N E W S</span>
+                </h3>
+                <ul id="home-news-bullets" class="news-bullets-list"></ul>
+                <p id="home-sub-note" class="sub-note-text"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SECTION 2: LORE / ABOUT ==================== -->
+        <section id="about-section" class="site-section">
+          <h2 class="section-title">L O R E</h2>
+          <hr class="divider-hatched">
+
+          <div class="about-two-col">
+            <!-- Left: Origin, Journey, 4-Col Table, FAQ -->
+            <div class="about-left-col">
+              <div class="info-block">
+                <h3 class="block-title">
+                  <svg class="block-icon" viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M20,3.4c-6.5,0-11.7,5.2-11.7,11.7c0,5.7,8.2,16.5,10.3,19.2c0.7,0.9,2.1,0.9,2.8,0 c2.1-2.7,10.3-13.5,10.3-19.2C31.7,8.7,26.5,3.4,20,3.4z M20,18.9c-2.1,0-3.8-1.7-3.8-3.8s1.7-3.8,3.8-3.8s3.8,1.7,3.8,3.8 S22.1,18.9,20,18.9z"/></svg>
+                  <span id="about-origin-tag">O R I G I N</span>
+                </h3>
+                <p id="about-origin-text" class="content-paragraph"></p>
+              </div>
+
+              <div class="info-block">
+                <h3 class="block-title">
+                  <svg class="block-icon" viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M36.1,19.6c0,8.9-7.2,16.1-16.1,16.1c-4.4,0-8.5-1.8-11.4-4.7L6.2,33.4c-0.4,0.4-1,0.1-1-0.4v-8.2 c0-0.3,0.3-0.6,0.6-0.6H14c0.5,0,0.8,0.6,0.4,1l-2.6,2.6c2.2,2.2,5.1,3.5,8.2,3.5c6.5,0,11.7-5.2,11.7-11.7s-5.2-11.7-11.7-11.7 c-4.6,0-8.6,2.7-10.6,6.6c-0.2,0.4-0.7,0.6-1.1,0.4l-3.3-1.4c-0.4-0.2-0.6-0.7-0.4-1.1C7.1,6.8,13.1,3.5,20,3.5 C28.9,3.5,36.1,10.7,36.1,19.6z"/></svg>
+                  <span id="about-journey-tag">J O U R N E Y</span>
+                </h3>
+                <p id="about-journey-text" class="content-paragraph"></p>
+              </div>
+
+              <!-- 4-Column Community Marks Table -->
+              <div class="about-tags-table-wrap">
+                <table class="lore-tags-table">
+                  <thead id="about-tags-thead"></thead>
+                  <tbody id="about-tags-tbody"></tbody>
+                </table>
+              </div>
+
+              <!-- FAQ Block -->
+              <div id="about-faq-block" class="info-block">
+                <h3 class="block-title">
+                  <svg class="block-icon" viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M20,3C10.6,3,3,10.6,3,20s7.6,17,17,17s17-7.6,17-17S29.4,3,20,3z M20,34c-7.7,0-14-6.3-14-14S12.3,6,20,6s14,6.3,14,14 S27.7,34,20,34z M20,25.5c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S20.8,25.5,20,25.5z M20.1,11.5 c-3.1,0-5.3,2-5.3,4.9c0,0.6,0.4,1,1,1s1-0.4,1-1c0-1.8,1.3-3,3.3-3c1.9,0,3.3,1.1,3.3,2.7c0,1.3-0.7,2-2,2.9 c-1.5,1.1-2.4,2.3-2.3,4.2v0.3c0,0.6,0.4,1,1,1s1-0.4,1-1v-0.2c0-1.2,0.6-2,1.9-2.9c1.6-1.1,2.5-2.2,2.5-4.3 C24.5,13.4,22.8,11.5,20.1,11.5z"/></svg>
+                  <span id="about-faq-tag">F A Q</span>
+                </h3>
+                <div id="about-faq-content" class="faq-list-wrap"></div>
+              </div>
+            </div>
+
+            <!-- Right: Character Frame & Art Credit -->
+            <div class="about-right-col">
+              <div class="portrait-frame">
+                <img id="about-portrait-img" src="assets/about-placeholder.svg?v=3" alt="Character Portrait">
+              </div>
+              <p id="about-art-credit" class="portrait-credit" style="display: none;">
+                <span id="about-art-credit-label">Art Credit ›</span>
+                <a id="about-art-credit-link" href="#" target="_blank" rel="noopener noreferrer"></a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SECTION 3: COMMISSIONS ==================== -->
+        <section id="commissions-section" class="site-section">
+          <div id="commissions-tiers-container"></div>
+        </section>
+
+        <!-- ==================== SECTION 4: TOS ==================== -->
+        <section id="tos-section" class="site-section">
+          <h2 class="section-title">T O S</h2>
+          <hr class="divider-hatched">
+
+          <p id="tos-preamble" class="tos-preamble-text"></p>
+          <div id="tos-categories-container" class="tos-categories-wrap"></div>
+        </section>
+
+        <!-- ==================== SECTION 5: PORTFOLIO ==================== -->
+        <section id="portfolio-section" class="site-section">
+          <div id="portfolio-groups-container"></div>
+        </section>
+
+        <!-- ==================== SECTION 6: CONTACT ==================== -->
+        <section id="contact-section" class="site-section">
+          <h2 class="section-title">C O N T A C T</h2>
+          <hr class="divider-hatched">
+
+          <div id="contact-two-col" class="contact-two-col">
+            <!-- Left: Info & News -->
+            <div class="contact-left-col">
+              <div class="info-block">
+                <h3 class="block-title">
+                  <svg class="block-icon" viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M20,3.5C10.9,3.5,3.5,10,3.5,18c0,4.8,2.7,9.1,6.8,11.8l-1.9,5.7c-0.2,0.6,0.3,1.2,0.9,1l6.7-2.7 c1.3,0.4,2.6,0.7,4,0.7c9.1,0,16.5-6.5,16.5-14.5S29.1,3.5,20,3.5z"/></svg>
+                  <span id="contact-heading-text">COMMISSION ME</span>
+                </h3>
+                <div id="contact-instructions-wrap" class="instructions-wrap"></div>
+              </div>
+
+              <div class="info-block" style="margin-top: 2rem;">
+                <h3 class="block-title">
+                  <svg class="block-icon" viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M20,3C10.6,3,3,10.6,3,20s7.6,17,17,17s17-7.6,17-17S29.4,3,20,3z M13,29.3c-1.3,0-2.3-1-2.3-2.3c0-1.3,1-2.3,2.3-2.3 s2.3,1,2.3,2.3C15.3,28.3,14.3,29.3,13,29.3z M20.9,29.3c0-2.8-1.1-5.3-3.1-7.3c-2-2-4.5-3.1-7.3-3.1v-3.7 c3.8,0,7.3,1.5,10,4.1c2.7,2.7,4.1,6.2,4.1,10H20.9z M28.2,29.3c0-4.8-1.9-9.2-5.3-12.6C19.5,13.3,15.1,11.4,10.3,11.4V7.7 c5.8,0,11.1,2.3,15.2,6.4c4.1,4.1,6.4,9.4,6.4,15.2H28.2z"/></svg>
+                  <span>N E W S</span>
+                </h3>
+                <ul id="contact-news-bullets" class="news-bullets-list"></ul>
+              </div>
+            </div>
+
+            <!-- Right: Direct Order Form & External Portal Options -->
+            <div id="contact-right-col" class="contact-right-col">
+              <!-- External Platform Portal Card (Used when form is off and external portal is on) -->
+              <div id="contact-external-card" class="external-portal-card" style="display: none;">
+                <h3 class="external-portal-title">
+                  <svg class="block-icon" viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M37.5,12.6l-17.5,11.9L2.5,12.6c-.2-.1-.3-.2-.5-.2v-2.7c0-.8.6-1.4,1.4-1.4h33.1c.8,0,1.4.6,1.4,1.4v2.7c-.2,0-.4,0-.5.2ZM19.5,26.3c.2.1.3.2.5.2s.4,0,.5-.2l17.5-11.9v16.9c0,.8-.6,1.4-1.4,1.4H3.4c-.8,0-1.4-.6-1.4-1.4V14.4l17.5,11.9Z"/></svg>
+                  <span>COMMISSION PORTAL</span>
+                </h3>
+                <p id="contact-external-desc" class="external-portal-desc"></p>
+                <a id="contact-external-btn" href="#" target="_blank" rel="noopener noreferrer" class="external-portal-btn">
+                  <span id="contact-external-btn-text">ORDER VIA VGEN</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+
+              <!-- Direct Email Card (Used when form is off and direct email is on) -->
+              <div id="contact-email-card" class="external-portal-card" style="display: none;">
+                <h3 class="external-portal-title">
+                  <svg class="block-icon" viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M37.5,12.6l-17.5,11.9L2.5,12.6c-.2-.1-.3-.2-.5-.2v-2.7c0-.8.6-1.4,1.4-1.4h33.1c.8,0,1.4.6,1.4,1.4v2.7c-.2,0-.4,0-.5.2ZM19.5,26.3c.2.1.3.2.5.2s.4,0,.5-.2l17.5-11.9v16.9c0,.8-.6,1.4-1.4,1.4H3.4c-.8,0-1.4-.6-1.4-1.4V14.4l17.5,11.9Z"/></svg>
+                  <span>DIRECT EMAIL</span>
+                </h3>
+                <p id="contact-email-desc" class="external-portal-desc"></p>
+                <a id="contact-email-btn" href="#" class="external-portal-btn">
+                  <span id="contact-email-btn-text">EMAIL DIRECTLY</span>
+                  <svg viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M37.5,12.6l-17.5,11.9L2.5,12.6c-.2-.1-.3-.2-.5-.2v-2.7c0-.8.6-1.4,1.4-1.4h33.1c.8,0,1.4.6,1.4,1.4v2.7c-.2,0-.4,0-.5.2ZM19.5,26.3c.2.1.3.2.5.2s.4,0,.5-.2l17.5-11.9v16.9c0,.8-.6,1.4-1.4,1.4H3.4c-.8,0-1.4-.6-1.4-1.4V14.4l17.5,11.9Z"/></svg>
+                </a>
+              </div>
+
+              <!-- Direct Clean Form (Used for demo, endpoint, or mailto) -->
+              <form id="order-form" class="order-form">
+                <div class="field">
+                  <label for="order-name">N A M E</label>
+                  <input type="text" id="order-name" name="name" required>
+                </div>
+                <div class="field">
+                  <label for="order-contact">CONTACT INFO (ex. twitter, discord, email)</label>
+                  <input type="text" id="order-contact" name="contact" required>
+                </div>
+                <div class="field">
+                  <label for="order-type">COMMISSION TYPE</label>
+                  <input type="text" id="order-type" name="type" required>
+                </div>
+                <div class="field">
+                  <label for="order-details">ADD ONS + EXTRA INFO</label>
+                  <textarea id="order-details" name="details" rows="5" required></textarea>
+                </div>
+                <div class="field checkbox-field">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="order-consent" name="consent" required>
+                    <span>I understand that sending this request does not guarantee me a commission slot.</span>
+                  </label>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" id="order-submit-btn" class="order-submit-btn">
+                    <svg viewBox="0 0 40 40" width="14" height="14" fill="currentColor"><path d="M37.5,12.6l-17.5,11.9L2.5,12.6c-.2-.1-.3-.2-.5-.2v-2.7c0-.8.6-1.4,1.4-1.4h33.1c.8,0,1.4.6,1.4,1.4v2.7c-.2,0-.4,0-.5.2ZM19.5,26.3c.2.1.3.2.5.2s.4,0,.5-.2l17.5-11.9v16.9c0,.8-.6,1.4-1.4,1.4H3.4c-.8,0-1.4-.6-1.4-1.4V14.4l17.5,11.9Z"/></svg>
+                    <span id="order-submit-btn-text">S E N D</span>
+                  </button>
+                </div>
+              </form>
+
+              <!-- Optional Secondary Channels (Displayed below the form when enabled) -->
+              <div id="contact-secondary-options" class="secondary-options-wrap" style="display: none;">
+                <!-- External Platform Secondary Link -->
+                <div id="contact-secondary-external" class="secondary-option-item" style="display: none;">
+                  <p id="contact-secondary-desc" class="secondary-option-desc"></p>
+                  <a id="contact-secondary-link" href="#" target="_blank" rel="noopener noreferrer" class="secondary-option-btn">
+                    <span id="contact-secondary-link-text">ORDER VIA VGEN</span>
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                  </a>
+                </div>
+                <!-- Direct Email Secondary Link -->
+                <div id="contact-secondary-email" class="secondary-option-item" style="display: none;">
+                  <p id="contact-secondary-email-desc" class="secondary-option-desc"></p>
+                  <a id="contact-secondary-email-link" href="#" class="secondary-option-btn">
+                    <span id="contact-secondary-email-link-text">EMAIL DIRECTLY</span>
+                    <svg viewBox="0 0 40 40" width="12" height="12" fill="currentColor"><path d="M37.5,12.6l-17.5,11.9L2.5,12.6c-.2-.1-.3-.2-.5-.2v-2.7c0-.8.6-1.4,1.4-1.4h33.1c.8,0,1.4.6,1.4,1.4v2.7c-.2,0-.4,0-.5.2ZM19.5,26.3c.2.1.3.2.5.2s.4,0,.5-.2l17.5-11.9v16.9c0,.8-.6,1.4-1.4,1.4H3.4c-.8,0-1.4-.6-1.4-1.4V14.4l17.5,11.9Z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== SECTION FOOTER (Inside Canvas) ==================== -->
+        <footer class="site-section-footer">
+          <p class="footer-contact-prompt">
+            Contact Me › <a id="footer-email-link" href="mailto:hello@example.com" class="footer-email-link">hello@example.com</a>
+          </p>
+          <ul id="footer-social-icons" class="footer-social-icons"></ul>
+          <hr class="footer-divider-solid">
+          <div class="footer-bottom-copy">
+            <p id="footer-copy-year">2026 © CREATOR</p>
+            <p class="footer-disclaimer">Characters displayed in both Commission &amp; Fanart work belong to their respective owners.</p>
+          </div>
+        </footer>
+
+      </div>
+    </main>
+
+    <!-- ==================== FLOATING FOOTER (Outside Canvas) ==================== -->
+    <div id="footer-credit" class="floating-credit-footer"></div>
+  </div>
+
+  <!-- Toast Notification Popup -->
+  <div id="toast" class="toast-popup" role="status" aria-live="polite">
+    <span class="toast-bullet">✦</span> <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
